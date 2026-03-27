@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outreach & Service — Rion Oh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2744; --navy-mid: #253461; --navy-light: #364a82;
+      --sky: #c8d8f0; --accent: #4a6fa5; --text: #1c1c2e;
+      --muted: #5a607a; --bg: #f7f8fc; --card-bg: #ffffff; --border: #d0d8ec;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.75; min-height: 100vh; }
+    .layout { display: flex; min-height: 100vh; }
+    .sidebar { width: 260px; flex-shrink: 0; background: var(--navy); color: #e8edf8; padding: 40px 28px; display: flex; flex-direction: column; gap: 32px; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+    .sidebar-profile img { width: 96px; height: 120px; border-radius: 50% / 40%; object-fit: cover; border: 3px solid var(--navy-light); display: block; margin-bottom: 14px; }
+    .sidebar-name { font-family: 'EB Garamond', serif; font-size: 1.45rem; font-weight: 500; color: #fff; line-height: 1.2; }
+    .sidebar-role { font-size: 0.78rem; color: var(--sky); margin-top: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .sidebar-tagline { font-size: 0.82rem; color: #a8b8d8; margin-top: 10px; font-style: italic; font-family: 'EB Garamond', serif; line-height: 1.5; }
+    .sidebar-email { display: flex; align-items: center; gap: 8px; color: #c0cde8; text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .sidebar-email:hover { color: #fff; }
+    .sidebar-email svg { flex-shrink: 0; opacity: 0.8; }
+    .cv-btn { display: inline-flex; align-items: center; gap: 7px; padding: 9px 16px; background: transparent; border: 1.5px solid var(--navy-light); border-radius: 999px; color: #e0e8f8 !important; font-size: 0.82rem; font-weight: 500; text-decoration: none; transition: background 0.2s, border-color 0.2s; width: fit-content; }
+    .cv-btn:hover { background: var(--navy-light); border-color: var(--sky); }
+    .sidebar-nav { display: flex; flex-direction: column; gap: 2px; }
+    .sidebar-nav a { color: #a8b8d8; text-decoration: none; font-size: 0.83rem; padding: 6px 10px; border-radius: 6px; transition: background 0.15s, color 0.15s; }
+    .sidebar-nav a:hover { background: rgba(255,255,255,0.07); color: #fff; }
+    .sidebar-nav a.active { background: rgba(255,255,255,0.1); color: #fff; font-weight: 500; }
+    .sidebar-nav-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: #5a6f9a; padding: 0 10px; margin-bottom: 4px; }
+    .main { flex: 1; padding: 56px 52px; max-width: 760px; }
+    .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--accent); text-decoration: none; font-weight: 500; margin-bottom: 36px; transition: color 0.2s; }
+    .back-link:hover { color: var(--navy); }
+    .page-title { font-family: 'EB Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--navy); margin-bottom: 32px; padding-bottom: 12px; border-bottom: 2px solid var(--navy); }
+    .detail-entry { padding: 22px 24px; background: var(--card-bg); border: 1px solid var(--border); border-left: 4px solid var(--navy); border-radius: 0 10px 10px 0; margin-bottom: 20px; }
+    .detail-entry h3 { font-family: 'EB Garamond', serif; font-size: 1.05rem; font-weight: 600; color: var(--navy); margin-bottom: 3px; }
+    .detail-meta { font-size: 0.79rem; color: var(--muted); font-style: italic; margin-bottom: 10px; }
+    .detail-entry p { font-size: 0.88rem; color: #2c3350; margin-bottom: 10px; }
+    .detail-entry ul { padding-left: 18px; font-size: 0.87rem; color: #2c3350; }
+    .detail-entry ul li { margin-bottom: 5px; }
+    .highlight-box { background: linear-gradient(135deg, #eef3fb, #f7f8fc); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 0 10px 10px 0; padding: 18px 22px; margin-top: 10px; font-style: italic; font-family: 'EB Garamond', serif; font-size: 1rem; line-height: 1.7; color: #2c3350; }
+    @media (max-width: 700px) { .layout { flex-direction: column; } .sidebar { width: 100%; height: auto; position: static; padding: 32px 24px; } .main { padding: 32px 24px; } }
+
+  </style>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-profile">
+      <img src="profile.JPG" alt="Rion Oh">
+      <div class="sidebar-name">Rion Oh</div>
+      <div class="sidebar-role">Physics Undergraduate · KAIST</div>
+      <div class="sidebar-tagline">Galaxy evolution &amp; star formation at cosmic noon and beyond</div>
+    </div>
+    <a href="mailto:oro020@kaist.ac.kr" class="sidebar-email">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5L4 8V6l8 5 8-5v2z"/></svg>
+      oro020@kaist.ac.kr
+    </a>
+    <a href="RionOh_CV.pdf" target="_blank" class="cv-btn">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
+      Download CV
+    </a>
+    <nav>
+      <div class="sidebar-nav-label">Pages</div>
+      <div class="sidebar-nav">
+        <a href="index.html">Home</a>
+        <a href="training.html">Research Training</a>
+        <a href="observation.html">Observation</a>
+        <a href="outreach.html" class="active">Outreach &amp; Service</a>
+      </div>
+    </nav>
+  </aside>
+  <main class="main">
+    <a href="index.html" class="back-link">← Back</a>
+    <div class="page-title">Outreach &amp; Service</div>
+
+    <div class="detail-entry">
+      <h3>Mentor, Program for Hearing-Impaired Youth</h3>
+      <div class="detail-meta">2024–Present</div>
+      <p>
+        Weekly STEM instruction for middle and high school students with hearing impairments,
+        alongside academic and career mentoring and supervision of educational field trips.
+        This work grew out of a personal commitment to building bridges between scientific communities
+        and underrepresented groups — including through a <strong>Deaf Culture course at UW</strong>
+        that deepened my understanding of the community I serve.
+      </p>
+    </div>
+
+    <div class="detail-entry">
+      <h3>Instructor, Elementary STEM Outreach Program</h3>
+      <div class="detail-meta">Spring 2025</div>
+      <p>
+        Designed and led biweekly hands-on STEM lessons for elementary school students,
+        with a focus on making abstract scientific concepts tangible and exciting for young learners.
+      </p>
+    </div>
+
+    <div class="detail-entry">
+      <h3>Instructor &amp; Tutor, Secondary and Undergraduate Levels</h3>
+      <div class="detail-meta">2023–2025</div>
+      <ul>
+        <li>Improved a high school student's physics mock exam percentile from <strong>60% to 96%</strong></li>
+        <li>Supported multiple undergraduates in General Physics, Calculus, and General Chemistry, improving course grades from C to A range</li>
+      </ul>
+    </div>
+
+    <div class="detail-entry">
+      <h3>Student Council &amp; Department Representative, KAIST Physics</h3>
+      <div class="detail-meta">2024–2026</div>
+      <ul>
+        <li>Spearheaded planning and execution of department festival and major information session</li>
+        <li>Oversaw departmental budget ($2.7K) and planned and executed 7 events</li>
+      </ul>
+    </div>
+  </main>
+</div>
+</body>
+</html>
