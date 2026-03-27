@@ -2,69 +2,140 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rion Oh</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       max-width: 800px;
       margin: auto;
-      padding: 40px;
+      padding: 40px 24px;
       line-height: 1.7;
       color: #222;
     }
-    h1 { font-size: 2.5rem; margin-bottom: 0.2em; }
-    h2 { margin-top: 2.5em; border-bottom: 1px solid #ddd; }
-    ul { padding-left: 20px; }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    h2 {
+      margin-top: 2.5em;
+      margin-bottom: 0.8em;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.3em;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 18px;
+    }
+
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .subtitle {
+      margin: 6px 0 8px 0;
+      color: #444;
+    }
+
+    .icon-row {
+      margin-top: 6px;
+    }
+
+    .icon-link {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .cv-button {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid #333;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #222;
+      font-weight: 600;
+    }
+
+    .cv-button:hover {
+      background-color: #f5f5f5;
+    }
+
+    p {
+      margin-top: 0.6em;
+      margin-bottom: 0.6em;
+    }
   </style>
 </head>
 
 <body>
 
-<div style="display: flex; align-items: center; gap: 20px;">
-  <img src="profile.JPG" alt="Rion Oh" style="width:120px; border-radius:50%;">
-  
-  <div>
-    <h1 style="margin:0;">Rion Oh</h1>
-    <p style="margin:5px 0;">Physics Undergraduate, KAIST</p>
-    <p style="margin:5px 0;">oro020@kaist.ac.kr</p>
+  <div class="header">
+    <img src="profile.JPG" alt="Rion Oh" class="profile-img">
+
+    <div>
+      <h1>Rion Oh</h1>
+      <p class="subtitle">Physics Undergraduate, KAIST</p>
+
+      <div class="icon-row">
+        <a href="mailto:oro020@kaist.ac.kr" class="icon-link" aria-label="Email Rion Oh">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#333" viewBox="0 0 24 24">
+            <path d="M2 4h20v16H2V4zm10 7L3.5 5.5h17L12 11zm0 2l8.5-5.5V19h-17V7.5L12 13z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
   </div>
-</div>
 
-<p>
-  <a href="RionOh_CV.pdf" target="_blank"
-     style="display:inline-block; padding:8px 14px; border:1px solid #333; border-radius:5px;">
-     Download CV
-  </a>
-</p>
+  <p>
+    <a href="RionOh_CV.pdf" target="_blank" class="cv-button">Download CV</a>
+  </p>
 
-<h2>Research Interests</h2>
-<p>
-I am interested in understanding how galaxies form and evolve, with a focus on
-the physical processes that drive galaxy quenching. My work centers on the role
-of gas in this transition, particularly neutral gas outflows and the evolution
-of gas reservoirs in high-redshift galaxies.
-</p>
+  <h2>Research Interests</h2>
+  <p>
+    I am interested in understanding how galaxies form and evolve, with a focus on
+    the physical processes that drive galaxy quenching. My work centers on the role
+    of gas in this transition, particularly neutral gas outflows and the evolution
+    of gas reservoirs in high-redshift galaxies.
+  </p>
 
-<h2>Research Experience</h2>
+  <h2>Research Experience</h2>
 
-<p><b>Neutral Gas Outflows in Quenching Galaxies with JWST</b><br>
-University of Washington — Advisor: Arianna S. Long</p>
+  <p>
+    <b>Neutral Gas Outflows in Quenching Galaxies with JWST</b><br>
+    University of Washington — Advisor: Arianna S. Long
+  </p>
 
-<ul>
-  <li>Selected a quiescent galaxy sample at 2.5 &lt; z &lt; 6 from JWST NIRSpec data using Hα equivalent width</li>
-  <li>Performed SED fitting on 3,000+ galaxies using Prospector to model stellar continua</li>
-  <li>Stacked continuum-subtracted spectra to detect Mg II and Na I D absorption features</li>
-  <li>Derived outflow velocities and neutral gas column densities across redshift and galaxy type</li>
-</ul>
+  <ul>
+    <li>Selected a quiescent galaxy sample at 2.5 &lt; z &lt; 6 from JWST NIRSpec data using Hα equivalent width</li>
+    <li>Performed SED fitting on 3,000+ galaxies using Prospector to model stellar continua</li>
+    <li>Stacked continuum-subtracted spectra to detect Mg II and Na I D absorption features</li>
+    <li>Derived outflow velocities and neutral gas column densities across redshift and galaxy type</li>
+  </ul>
 
-<p><b>Intracluster Gas Modeling in Galaxy Clusters</b><br>
-KAIST — Advisor: Junhan Kim</p>
+  <p>
+    <b>Intracluster Gas Modeling in Galaxy Clusters</b><br>
+    KAIST — Advisor: Junhan Kim
+  </p>
 
-<ul>
-  <li>Modeled hot intracluster gas using joint X-ray and Sunyaev–Zel’dovich analysis</li>
-  <li>Implemented triaxial ellipsoidal models for gas density and pressure</li>
-  <li>Performed Bayesian inference using MCMC (emcee, redemcee)</li>
-</ul>
+  <ul>
+    <li>Modeled hot intracluster gas using joint X-ray and Sunyaev–Zel’dovich analysis</li>
+    <li>Implemented triaxial ellipsoidal models for gas density and pressure</li>
+    <li>Performed Bayesian inference using MCMC (emcee, redemcee)</li>
+  </ul>
 
 </body>
 </html>
