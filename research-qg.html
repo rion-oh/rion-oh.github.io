@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JWST Outflows — Rion Oh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2744; --navy-mid: #253461; --navy-light: #364a82;
+      --sky: #c8d8f0; --accent: #4a6fa5; --text: #1c1c2e;
+      --muted: #5a607a; --bg: #f7f8fc; --card-bg: #ffffff; --border: #d0d8ec;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.75; min-height: 100vh; }
+    .layout { display: flex; min-height: 100vh; }
+
+    .sidebar {
+      width: 260px; flex-shrink: 0; background: var(--navy); color: #e8edf8;
+      padding: 40px 28px; display: flex; flex-direction: column; gap: 32px;
+      position: sticky; top: 0; height: 100vh; overflow-y: auto;
+    }
+    .sidebar-profile img { width: 96px; height: 120px; border-radius: 50% / 40%; object-fit: cover; border: 3px solid var(--navy-light); display: block; margin-bottom: 14px; }
+    .sidebar-name { font-family: 'EB Garamond', serif; font-size: 1.45rem; font-weight: 500; color: #fff; line-height: 1.2; }
+    .sidebar-role { font-size: 0.78rem; color: var(--sky); margin-top: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .sidebar-tagline { font-size: 0.82rem; color: #a8b8d8; margin-top: 10px; font-style: italic; font-family: 'EB Garamond', serif; line-height: 1.5; }
+    .sidebar-email { display: flex; align-items: center; gap: 8px; color: #c0cde8; text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .sidebar-email:hover { color: #fff; }
+    .sidebar-email svg { flex-shrink: 0; opacity: 0.8; }
+    .cv-btn { display: inline-flex; align-items: center; gap: 7px; padding: 9px 16px; background: transparent; border: 1.5px solid var(--navy-light); border-radius: 999px; color: #e0e8f8 !important; font-size: 0.82rem; font-weight: 500; text-decoration: none; transition: background 0.2s, border-color 0.2s; width: fit-content; }
+    .cv-btn:hover { background: var(--navy-light); border-color: var(--sky); }
+    .sidebar-nav { display: flex; flex-direction: column; gap: 2px; }
+    .sidebar-nav a { color: #a8b8d8; text-decoration: none; font-size: 0.83rem; padding: 6px 10px; border-radius: 6px; transition: background 0.15s, color 0.15s; }
+    .sidebar-nav a:hover { background: rgba(255,255,255,0.07); color: #fff; }
+    .sidebar-nav a.active { background: rgba(255,255,255,0.1); color: #fff; font-weight: 500; }
+    .sidebar-nav-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: #5a6f9a; padding: 0 10px; margin-bottom: 4px; }
+
+    .main { flex: 1; padding: 56px 52px; max-width: 760px; }
+
+    .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--accent); text-decoration: none; font-weight: 500; margin-bottom: 36px; transition: color 0.2s; }
+    .back-link:hover { color: var(--navy); }
+
+    .page-title { font-family: 'EB Garamond', serif; font-size: 1.6rem; font-weight: 600; color: var(--navy); line-height: 1.3; margin-bottom: 6px; }
+    .page-meta { font-size: 0.82rem; color: var(--muted); font-style: italic; margin-bottom: 36px; }
+
+    .section-title { font-family: 'EB Garamond', serif; font-size: 1.1rem; font-weight: 500; color: var(--navy); padding-bottom: 8px; border-bottom: 2px solid var(--navy); margin-bottom: 16px; margin-top: 36px; }
+
+    p { font-size: 0.92rem; color: #2c3350; margin-bottom: 14px; }
+
+    ul { padding-left: 18px; font-size: 0.88rem; color: #2c3350; margin-bottom: 14px; }
+    ul li { margin-bottom: 5px; }
+
+    .placeholder {
+      padding: 24px; border: 1.5px dashed var(--border); border-radius: 10px;
+      text-align: center; color: var(--muted); font-size: 0.84rem; font-style: italic;
+      margin: 20px 0;
+    }
+
+    @media (max-width: 700px) {
+      .layout { flex-direction: column; }
+      .sidebar { width: 100%; height: auto; position: static; padding: 32px 24px; }
+      .main { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-profile">
+      <img src="profile.JPG" alt="Rion Oh">
+      <div class="sidebar-name">Rion Oh</div>
+      <div class="sidebar-role">Physics Undergraduate · KAIST</div>
+      <div class="sidebar-tagline">Galaxy evolution &amp; star formation at cosmic noon and beyond</div>
+    </div>
+    <a href="mailto:oro020@kaist.ac.kr" class="sidebar-email">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5L4 8V6l8 5 8-5v2z"/></svg>
+      oro020@kaist.ac.kr
+    </a>
+    <a href="RionOh_CV.pdf" target="_blank" class="cv-btn">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
+      Download CV
+    </a>
+    <nav>
+      <div class="sidebar-nav-label">Pages</div>
+      <div class="sidebar-nav">
+        <a href="index.html">Home</a>
+        <a href="more.html#training">Research Training</a>
+        <a href="more.html#observation">Observation</a>
+        <a href="more.html#outreach">Outreach &amp; Service</a>
+      </div>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <a href="index.html" class="back-link">← Back</a>
+
+    <div class="page-title">Statistical Detection of Neutral Gas Outflows in <i>z</i> = 2.5–6 Quenching Galaxies with JWST</div>
+    <div class="page-meta">University of Washington · Red Galaxies Group · Advisor: Arianna S. Long · 2026–Present</div>
+
+    <div class="section-title">Overview</div>
+    <p>
+      <!-- 여기에 프로젝트 전체 맥락 설명 추가 — 왜 이 질문이 중요한지, 어떤 데이터를 쓰는지 등 -->
+      <!-- 예: "Understanding how massive galaxies shut down their star formation is one of the central questions in galaxy evolution..." -->
+    </p>
+    <div class="placeholder">Overview text to be added</div>
+
+    <div class="section-title">Methods</div>
+    <ul>
+      <li>Constructed a quiescent galaxy sample at 2.5 &lt; <i>z</i> &lt; 6 from the JWST NIRSpec catalog using Hα equivalent width, separating quiescent, green-valley, and star-forming populations.</li>
+      <li>Built matched spectroscopic–photometric datasets and performed SED fitting with <em>Prospector</em> to derive stellar continua and physical parameters.</li>
+      <li>Subtracted stellar continua and performed spectral stacking of residual spectra to enhance Mg II and Na I D absorption features.</li>
+      <li>Measured equivalent widths and velocity offsets of stacked absorption lines to probe neutral-gas outflows.</li>
+    </ul>
+
+    <div class="section-title">Results</div>
+    <div class="placeholder">Results and figures to be added</div>
+
+    <div class="section-title">Context &amp; Motivation</div>
+    <div class="placeholder">Discussion of broader significance to be added</div>
+
+  </main>
+</div>
+</body>
+</html>
