@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rion Oh</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -46,12 +47,18 @@
     }
 
     .subtitle {
-      margin: 6px 0 8px 0;
+      margin: 6px 0 6px 0;
       color: #444;
     }
 
+    .tagline {
+      margin: 0;
+      color: #666;
+      font-size: 0.95rem;
+    }
+
     .icon-row {
-      margin-top: 6px;
+      margin-top: 8px;
     }
 
     .icon-link {
@@ -62,7 +69,8 @@
 
     .cv-button {
       display: inline-block;
-      padding: 8px 14px;
+      margin-top: 8px;
+      padding: 7px 13px;
       border: 1px solid #333;
       border-radius: 6px;
       text-decoration: none;
@@ -84,51 +92,50 @@
 <body>
 
   <div class="header">
-    <img src="profile.JPG" 
-     alt="Rion Oh" 
-     style="width:160px; height:160px; object-fit:cover; border-radius:50%;">
+    <img src="profile.JPG" alt="Rion Oh" class="profile-img">
 
     <div>
       <h1>Rion Oh</h1>
       <p class="subtitle">Physics Undergraduate, KAIST</p>
+      <p class="tagline">
+        Studying galaxy evolution and star formation history in the high-redshift universe
+      </p>
 
       <div class="icon-row">
-        <a href="mailto:oro020@kaist.ac.kr" style="text-decoration:none;">
+        <a href="mailto:oro020@kaist.ac.kr" class="icon-link" aria-label="Email">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#333" viewBox="0 0 24 24">
             <path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5L4 8V6l8 5 8-5v2z"/>
           </svg>
         </a>
-      </p>
+      </div>
 
-      <p style="margin:8px 0;">
-        <a href="RionOh_CV.pdf" target="_blank"
-           style="display:inline-block; padding:6px 12px; border:1px solid #333; border-radius:5px; text-decoration:none;">
-           Download CV
-        </a>
-      </p>
-
+      <a href="RionOh_CV.pdf" target="_blank" class="cv-button">Download CV</a>
     </div>
   </div>
 
   <h2>Research Interests</h2>
+
   <p>
-  I am interested in understanding <strong>how galaxies form and evolve</strong>,
-  with a particular focus on <strong>how star formation is regulated and quenched</strong>
-  across cosmic time.
-  
-  I am especially interested in the <strong>physical processes that govern galaxy quenching</strong>,
-  including the role of <strong>gas depletion, feedback, and baryonic cycling</strong>
-  in shaping galaxy evolution.
-  
-  More broadly, I am interested in <em>early galaxy formation</em>,
-  <em>star formation histories</em>, <em>AGN feedback</em>, and
-  <em>dusty star-forming galaxies</em>.
+    I am interested in understanding <strong>how galaxies form and evolve</strong>,
+    with a particular focus on <strong>how star formation is regulated and quenched</strong>
+    across cosmic time.
+  </p>
+
+  <p>
+    I am especially interested in the <strong>physical processes that govern galaxy quenching</strong>,
+    including <strong>gas depletion, feedback, and baryonic cycling</strong>.
+  </p>
+
+  <p>
+    More broadly, I am interested in <em>early galaxy formation</em>,
+    <em>star formation histories</em>, <em>AGN feedback</em>, and
+    <em>dusty star-forming galaxies</em>.
   </p>
 
   <h2>Research Experience</h2>
 
   <p>
-    <b>Neutral Gas Outflows in Quenching Galaxies with JWST</b><br>
+    <strong>Neutral Gas Outflows in Quenching Galaxies with JWST</strong><br>
     University of Washington — Advisor: Arianna S. Long
   </p>
 
@@ -140,7 +147,7 @@
   </ul>
 
   <p>
-    <b>Intracluster Gas Modeling in Galaxy Clusters</b><br>
+    <strong>Intracluster Gas Modeling in Galaxy Clusters</strong><br>
     KAIST — Advisor: Junhan Kim
   </p>
 
