@@ -4,188 +4,305 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rion Oh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --navy: #1a2744;
+      --navy-mid: #253461;
+      --navy-light: #364a82;
+      --sky: #c8d8f0;
+      --accent: #4a6fa5;
+      --text: #1c1c2e;
+      --muted: #5a607a;
+      --bg: #f7f8fc;
+      --card-bg: #ffffff;
+      --border: #d0d8ec;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: auto;
-      padding: 40px 24px;
-      line-height: 1.7;
-      background-color: #f9fafb;
-      color: #222;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      min-height: 100vh;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin: 0;
+    /* ── Sidebar layout ── */
+    .layout {
+      display: flex;
+      min-height: 100vh;
     }
 
-    h2 {
-      margin-top: 2.5em;
-      margin-bottom: 0.8em;
-      border-bottom: 2px solid #e5e7eb;
-      padding-bottom: 0.3em;
+    .sidebar {
+      width: 260px;
+      flex-shrink: 0;
+      background: var(--navy);
+      color: #e8edf8;
+      padding: 48px 28px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
     }
 
-    ul {
-      padding-left: 20px;
+    .sidebar-profile img {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--navy-light);
+      display: block;
+      margin-bottom: 14px;
     }
 
-    .header {
+    .sidebar-name {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .sidebar-role {
+      font-size: 0.78rem;
+      color: var(--sky);
+      margin-top: 4px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .sidebar-tagline {
+      font-size: 0.82rem;
+      color: #a8b8d8;
+      margin-top: 10px;
+      font-style: italic;
+      font-family: 'EB Garamond', serif;
+      line-height: 1.5;
+    }
+
+    .sidebar-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sidebar-links a {
+      color: #c0cde8;
+      text-decoration: none;
+      font-size: 0.82rem;
       display: flex;
       align-items: center;
-      gap: 24px;
-      margin-bottom: 25px;
+      gap: 8px;
+      transition: color 0.2s;
     }
 
-    .profile-img {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
+    .sidebar-links a:hover { color: #fff; }
 
-    .subtitle {
-      margin: 6px 0;
-      color: #555;
-    }
+    .sidebar-links svg { flex-shrink: 0; opacity: 0.8; }
 
-    .tagline {
-      margin: 0;
-      color: #777;
-      font-size: 0.95rem;
-    }
-
-    .icon-row {
-      margin-top: 10px;
-    }
-
-    .cv-button {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 14px;
-      border: 1px solid #333;
-      border-radius: 6px;
+    .cv-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 16px;
+      background: transparent;
+      border: 1.5px solid var(--navy-light);
+      border-radius: 999px;
+      color: #e0e8f8 !important;
+      font-size: 0.82rem;
+      font-weight: 500;
       text-decoration: none;
-      color: #222;
-      font-weight: 600;
-      background-color: white;
+      transition: background 0.2s, border-color 0.2s;
     }
 
-    .cv-button:hover {
-      background-color: #f3f4f6;
+    .cv-btn:hover {
+      background: var(--navy-light);
+      border-color: var(--sky);
     }
 
-    .section {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      margin-top: 20px;
+    /* ── Main content ── */
+    .main {
+      flex: 1;
+      padding: 56px 52px;
+      max-width: 760px;
+    }
+
+    /* ── Section ── */
+    section { margin-bottom: 48px; }
+
+    .section-title {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--navy);
+      letter-spacing: 0.02em;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--navy);
+      margin-bottom: 22px;
+    }
+
+    /* ── Research Interests ── */
+    .research-text {
+      font-size: 0.93rem;
+      color: #2c3350;
+      margin-bottom: 16px;
     }
 
     .keywords {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+      margin-top: 4px;
     }
 
-    .keyword {
-      background: #eef2f7;
-      padding: 6px 12px;
-      border-radius: 15px;
-      font-size: 0.9rem;
+    .kw {
+      padding: 5px 14px;
+      background: var(--sky);
+      color: var(--navy);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
     }
 
-    p {
-      margin-top: 0.6em;
-      margin-bottom: 0.6em;
+    .kw.primary {
+      background: var(--navy);
+      color: #e8edf8;
+    }
+
+    /* ── Research entries ── */
+    .research-entry {
+      padding: 20px 22px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--navy);
+      border-radius: 0 10px 10px 0;
+      margin-bottom: 18px;
+    }
+
+    .research-entry h3 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+
+    .research-meta {
+      font-size: 0.79rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    .research-entry ul {
+      padding-left: 18px;
+      font-size: 0.87rem;
+      color: #2c3350;
+    }
+
+    .research-entry ul li { margin-bottom: 4px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 700px) {
+      .layout { flex-direction: column; }
+      .sidebar { width: 100%; height: auto; position: static; padding: 32px 24px; }
+      .main { padding: 32px 24px; }
     }
   </style>
 </head>
 
 <body>
+<div class="layout">
 
-  <!-- HEADER -->
-  <div class="header">
-    <img src="profile.JPG" alt="Rion Oh" class="profile-img">
+  <!-- ── Sidebar ── -->
+  <aside class="sidebar">
+    <div class="sidebar-profile">
+      <img src="profile.JPG" alt="Rion Oh">
+      <div class="sidebar-name">Rion Oh</div>
+      <div class="sidebar-role">Physics Undergraduate · KAIST</div>
+      <div class="sidebar-tagline">Galaxy evolution &amp; star formation at cosmic noon and beyond</div>
+    </div>
 
-    <div>
-      <h1>Rion Oh</h1>
-      <p class="subtitle">Physics Undergraduate, KAIST</p>
-      <p class="tagline">
-        Studying galaxy evolution and star formation history in the high-redshift universe
+    <div class="sidebar-links">
+      <a href="mailto:oro020@kaist.ac.kr">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5L4 8V6l8 5 8-5v2z"/></svg>
+        oro020@kaist.ac.kr
+      </a>
+      <!-- Add your GitHub/ADS/LinkedIn here -->
+      <!-- <a href="https://github.com/...">GitHub</a> -->
+    </div>
+
+    <a href="RionOh_CV.pdf" target="_blank" class="cv-btn">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
+      Download CV
+    </a>
+  </aside>
+
+  <!-- ── Main ── -->
+  <main class="main">
+
+    <section>
+      <div class="section-title">Research Interests</div>
+ 
+      <p class="research-text">
+        I am interested in understanding <strong>how galaxies form and evolve</strong>,
+        with a particular focus on <strong>how star formation is regulated</strong>
+        across cosmic time.
+        Especially interested in the <strong>physical mechanisms</strong> that drive this regulation,
+        including <em>gas cycling, depletion, and feedback processes</em>,
+        as well as drivers such as <em>AGN activity</em> and <em>galaxy mergers</em>.
       </p>
+      <p class="research-text">
+        More broadly, I am interested in how these processes shape <strong>star formation histories</strong>
+        and galaxy evolution, and how they manifest across different systems and evolutionary stages,
+        including <em>dusty star-forming galaxies</em>, <em>protoclusters</em>, and
+        <em>galaxy rejuvenation</em>.
+      </p>
+ 
+      <div class="keywords">
+        <span class="kw primary">Early Galaxy Formation &amp; Evolution</span>
+        <span class="kw primary">Star Formation Histories</span>
+        <span class="kw primary">Quenching Galaxies</span>
+        <span class="kw">AGN Feedback</span>
+        <span class="kw">Dusty Star-Forming Galaxies</span>
+      </div>
+    </section>
 
-      <div class="icon-row">
-        <a href="mailto:oro020@kaist.ac.kr" style="text-decoration:none;">📧</a>
+    <section>
+      <div class="section-title">Research Experience</div>
+
+      <div class="research-entry">
+        <h3>Neutral Gas Outflows in Quenching Galaxies at 2.5 &lt; z &lt; 6 with JWST</h3>
+        <div class="research-meta">University of Washington · Red Galaxies Group · Advisor: Arianna S. Long · 2026–Present</div>
+        <ul>
+          <li>Selected a quiescent galaxy sample at 2.5 &lt; z &lt; 6 from JWST NIRSpec using Hα equivalent width</li>
+          <li>Performed SED fitting with Prospector on 3,000+ galaxies via NSF ACCESS to extract stellar continua</li>
+          <li>Stacked continuum-subtracted spectra to detect Mg II and Na I D absorption features</li>
+          <li>Derived outflow velocities and neutral-gas column densities across galaxy types and redshifts</li>
+        </ul>
       </div>
 
-      <a href="RionOh_CV.pdf" target="_blank" class="cv-button">Download CV</a>
-    </div>
-  </div>
+      <div class="research-entry">
+        <h3>Intracluster Gas Modeling in Galaxy Clusters</h3>
+        <div class="research-meta">KAIST · Observational Cosmology &amp; Astrophysics Lab · Advisor: Junhan Kim · 2025–Present</div>
+        <ul>
+          <li>Modeled hot intracluster gas via joint X-ray and Sunyaev–Zel'dovich analysis (CLUMP-3D framework)</li>
+          <li>Implemented triaxial ellipsoidal models of gas density and pressure projected along the line of sight</li>
+          <li>Performed Bayesian inference using MCMC, comparing emcee and redemcee samplers</li>
+        </ul>
+      </div>
+    </section>
 
-  <!-- ABOUT -->
-  <div class="section">
-    <h2>About</h2>
-    <p>
-      I am an undergraduate student in physics at KAIST, currently on exchange at the University of Washington.
-      I am interested in understanding how galaxies form and evolve, particularly how star formation is regulated
-      across cosmic time.
-    </p>
-    <p>
-      My research focuses on the physical mechanisms driving this regulation, including gas cycling, feedback,
-      and galaxy-scale processes such as AGN activity and mergers.
-    </p>
-  </div>
-
-  <!-- RESEARCH INTERESTS -->
-  <div class="section">
-    <h2>Research Interests</h2>
-
-    <div class="keywords">
-      <div class="keyword">Galaxy Formation & Evolution</div>
-      <div class="keyword">Star Formation Regulation</div>
-      <div class="keyword">High-Redshift Universe</div>
-      <div class="keyword">Gas Cycling</div>
-      <div class="keyword">AGN Feedback</div>
-      <div class="keyword">Galaxy Mergers</div>
-      <div class="keyword">Star Formation Histories</div>
-      <div class="keyword">Dusty Star-Forming Galaxies</div>
-      <div class="keyword">Protoclusters</div>
-      <div class="keyword">Galaxy Rejuvenation</div>
-    </div>
-  </div>
-
-  <!-- RESEARCH EXPERIENCE -->
-  <div class="section">
-    <h2>Research Experience</h2>
-
-    <p>
-      <strong>Neutral Gas Outflows in Quenching Galaxies with JWST</strong><br>
-      University of Washington — Advisor: Arianna S. Long
-    </p>
-
-    <ul>
-      <li>Selected a quiescent galaxy sample at 2.5 &lt; z &lt; 6 from JWST NIRSpec data</li>
-      <li>Performed SED fitting on 3,000+ galaxies using Prospector</li>
-      <li>Stacked spectra to detect Mg II and Na I D absorption features</li>
-      <li>Derived outflow velocities and neutral gas column densities</li>
-    </ul>
-
-    <p>
-      <strong>Intracluster Gas Modeling in Galaxy Clusters</strong><br>
-      KAIST — Advisor: Junhan Kim
-    </p>
-
-    <ul>
-      <li>Modeled hot intracluster gas using X-ray and SZ analysis</li>
-      <li>Implemented triaxial models of gas density and pressure</li>
-      <li>Performed Bayesian inference using MCMC methods</li>
-    </ul>
-  </div>
-
+  </main>
+</div>
 </body>
 </html>
