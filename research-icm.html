@@ -62,12 +62,15 @@
     
     .results-figures {
       display: flex;
-      gap: 20px;
+      gap: 16px;          /* 이미지 사이 간격 */
+      width: 100%;        /* 👉 section width에 맞춤 */
     }
     
     .results-figures img {
-      height: auto;
-      max-width: 100%;
+      flex: 1;            /* 👉 두 개 반반 */
+      width: 0;           /* 👉 flex 기반으로 정확히 나눔 */
+      height: auto;       /* 👉 비율 유지 */
+      object-fit: contain;
     }
   </style>
 </head>
