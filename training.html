@@ -50,19 +50,21 @@
       margin: 0;
     }
     
-    .figure-row.two-cols {
+    .figure-row {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 12px;
-      width: 100%;
+      align-items: center;   /* 핵심: 세로 정렬 */
     }
     
-    .figure-row.two-cols img {
-      width: 100%;
-      height: auto;
+    .figure-row img {
+      height: 250px;         /* 원하는 높이 */
+      width: auto;           /* 비율 유지 */
+      max-width: 100%;       /* 넘침 방지 */
+      object-fit: contain;   /* 절대 안 잘림 */
       display: block;
-      object-fit: contain;
-    }  
+      margin: 0 auto;        /* 가운데 정렬 */
+    } 
   </style>
   
 </head>
