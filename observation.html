@@ -48,7 +48,26 @@
     .detail-entry ul li { margin-bottom: 5px; }
     .highlight-box { background: linear-gradient(135deg, #eef3fb, #f7f8fc); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 0 10px 10px 0; padding: 18px 22px; margin-top: 10px; font-style: italic; font-family: 'EB Garamond', serif; font-size: 1rem; line-height: 1.7; color: #2c3350; }
     @media (max-width: 700px) { .layout { flex-direction: column; } .sidebar { width: 100%; height: auto; position: static; padding: 32px 24px; } .main { padding: 32px 24px; } }
-
+    .results-figure {
+      width: 100%;
+      margin: 0;
+    }
+    
+    .figure-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      align-items: center;   /* 핵심: 세로 정렬 */
+    }
+    
+    .figure-row img {
+      height: 250px;         /* 원하는 높이 */
+      width: auto;           /* 비율 유지 */
+      max-width: 100%;       /* 넘침 방지 */
+      object-fit: contain;   /* 절대 안 잘림 */
+      display: block;
+      margin: 0 auto;        /* 가운데 정렬 */
+    } 
   </style>
 </head>
 <body>
