@@ -48,18 +48,20 @@
 
     .image-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
       margin-top: 14px;
+      align-items: start;
     }
     
     .image-grid img {
+      display: block;
       width: 100%;
-      height: 140px;
-      object-fit: cover;
+      height: auto;
       border-radius: 8px;
     }
   </style>
+  
 </head>
 <body>
 <div class="layout">
@@ -101,10 +103,11 @@
         <li>Designed radio telescope receiver circuits; constrained antenna parameters for <strong>21 cm intensity mapping</strong></li>
       </ul>
 
-      <img src="SIDM1.png">
-      <img src="SIDM2.png">
-      <img src="merger.gif">
-      <img src="radio-receiver.png">
+    <div class="image-grid">
+      <img src="SIDM1.png" alt="Extragalactic Astronomy and Cosmology Summer School image 1">
+      <img src="SIDM2.png" alt="Extragalactic Astronomy and Cosmology Summer School image 2">
+      <img src="merger.gif" alt="Extragalactic Astronomy and Cosmology Summer School image 3">
+      <img src="radio-reciever.png" alt="Extragalactic Astronomy and Cosmology Summer School image 4">
     </div>
 
     <div class="detail-entry">
