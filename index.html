@@ -12,6 +12,7 @@
       margin: auto;
       padding: 40px 24px;
       line-height: 1.7;
+      background-color: #f9fafb;
       color: #222;
     }
 
@@ -23,7 +24,7 @@
     h2 {
       margin-top: 2.5em;
       margin-bottom: 0.8em;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 2px solid #e5e7eb;
       padding-bottom: 0.3em;
     }
 
@@ -35,7 +36,7 @@
       display: flex;
       align-items: center;
       gap: 24px;
-      margin-bottom: 18px;
+      margin-bottom: 25px;
     }
 
     .profile-img {
@@ -47,39 +48,55 @@
     }
 
     .subtitle {
-      margin: 6px 0 6px 0;
-      color: #444;
+      margin: 6px 0;
+      color: #555;
     }
 
     .tagline {
       margin: 0;
-      color: #666;
+      color: #777;
       font-size: 0.95rem;
     }
 
     .icon-row {
-      margin-top: 8px;
-    }
-
-    .icon-link {
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
+      margin-top: 10px;
     }
 
     .cv-button {
       display: inline-block;
-      margin-top: 8px;
-      padding: 7px 13px;
+      margin-top: 10px;
+      padding: 8px 14px;
       border: 1px solid #333;
       border-radius: 6px;
       text-decoration: none;
       color: #222;
       font-weight: 600;
+      background-color: white;
     }
 
     .cv-button:hover {
-      background-color: #f5f5f5;
+      background-color: #f3f4f6;
+    }
+
+    .section {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      margin-top: 20px;
+    }
+
+    .keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .keyword {
+      background: #eef2f7;
+      padding: 6px 12px;
+      border-radius: 15px;
+      font-size: 0.9rem;
     }
 
     p {
@@ -91,6 +108,7 @@
 
 <body>
 
+  <!-- HEADER -->
   <div class="header">
     <img src="profile.JPG" alt="Rion Oh" class="profile-img">
 
@@ -102,60 +120,72 @@
       </p>
 
       <div class="icon-row">
-        <a href="mailto:oro020@kaist.ac.kr" class="icon-link" aria-label="Email">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#333" viewBox="0 0 24 24">
-            <path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5L4 8V6l8 5 8-5v2z"/>
-          </svg>
-        </a>
+        <a href="mailto:oro020@kaist.ac.kr" style="text-decoration:none;">📧</a>
       </div>
 
       <a href="RionOh_CV.pdf" target="_blank" class="cv-button">Download CV</a>
     </div>
   </div>
 
-  <h2>Research Interests</h2>
+  <!-- ABOUT -->
+  <div class="section">
+    <h2>About</h2>
+    <p>
+      I am an undergraduate student in physics at KAIST, currently on exchange at the University of Washington.
+      I am interested in understanding how galaxies form and evolve, particularly how star formation is regulated
+      across cosmic time.
+    </p>
+    <p>
+      My research focuses on the physical mechanisms driving this regulation, including gas cycling, feedback,
+      and galaxy-scale processes such as AGN activity and mergers.
+    </p>
+  </div>
 
-  <p>
-    I am interested in understanding <strong>how galaxies form and evolve</strong>,
-    with a particular focus on <strong>how star formation is regulated</strong>
-    across cosmic time.
-    
-    Especially interested in the <strong>physical mechanisms</strong> that drive this regulation,
-    including <em>gas cycling, depletion, and feedback processes</em>,
-    as well as drivers such as <em>AGN activity</em> and <em>galaxy mergers</em>.
-  </p>
+  <!-- RESEARCH INTERESTS -->
+  <div class="section">
+    <h2>Research Interests</h2>
 
-  <p>
-    More broadly, I am interested in how these processes shape <strong>star formation histories</strong>
-    and galaxy evolution, and how they manifest across different systems and evolutionary stages,
-    including <em>dusty star-forming galaxies</em>, <em>protoclusters</em>, and
-    <em>galaxy rejuvenation</em>.
-  </p>
+    <div class="keywords">
+      <div class="keyword">Galaxy Formation & Evolution</div>
+      <div class="keyword">Star Formation Regulation</div>
+      <div class="keyword">High-Redshift Universe</div>
+      <div class="keyword">Gas Cycling</div>
+      <div class="keyword">AGN Feedback</div>
+      <div class="keyword">Galaxy Mergers</div>
+      <div class="keyword">Star Formation Histories</div>
+      <div class="keyword">Dusty Star-Forming Galaxies</div>
+      <div class="keyword">Protoclusters</div>
+      <div class="keyword">Galaxy Rejuvenation</div>
+    </div>
+  </div>
 
-  <h2>Research Experience</h2>
+  <!-- RESEARCH EXPERIENCE -->
+  <div class="section">
+    <h2>Research Experience</h2>
 
-  <p>
-    <strong>Neutral Gas Outflows in Quenching Galaxies with JWST</strong><br>
-    University of Washington — Advisor: Arianna S. Long
-  </p>
+    <p>
+      <strong>Neutral Gas Outflows in Quenching Galaxies with JWST</strong><br>
+      University of Washington — Advisor: Arianna S. Long
+    </p>
 
-  <ul>
-    <li>Selected a quiescent galaxy sample at 2.5 &lt; z &lt; 6 from JWST NIRSpec data using Hα equivalent width</li>
-    <li>Performed SED fitting on 3,000+ galaxies using Prospector to model stellar continua</li>
-    <li>Stacked continuum-subtracted spectra to detect Mg II and Na I D absorption features</li>
-    <li>Derived outflow velocities and neutral gas column densities across redshift and galaxy type</li>
-  </ul>
+    <ul>
+      <li>Selected a quiescent galaxy sample at 2.5 &lt; z &lt; 6 from JWST NIRSpec data</li>
+      <li>Performed SED fitting on 3,000+ galaxies using Prospector</li>
+      <li>Stacked spectra to detect Mg II and Na I D absorption features</li>
+      <li>Derived outflow velocities and neutral gas column densities</li>
+    </ul>
 
-  <p>
-    <strong>Intracluster Gas Modeling in Galaxy Clusters</strong><br>
-    KAIST — Advisor: Junhan Kim
-  </p>
+    <p>
+      <strong>Intracluster Gas Modeling in Galaxy Clusters</strong><br>
+      KAIST — Advisor: Junhan Kim
+    </p>
 
-  <ul>
-    <li>Modeled hot intracluster gas using joint X-ray and Sunyaev–Zel’dovich analysis</li>
-    <li>Implemented triaxial ellipsoidal models for gas density and pressure</li>
-    <li>Performed Bayesian inference using MCMC (emcee, redemcee)</li>
-  </ul>
+    <ul>
+      <li>Modeled hot intracluster gas using X-ray and SZ analysis</li>
+      <li>Implemented triaxial models of gas density and pressure</li>
+      <li>Performed Bayesian inference using MCMC methods</li>
+    </ul>
+  </div>
 
 </body>
 </html>
